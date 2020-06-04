@@ -1,47 +1,48 @@
 package com.example.covidapp.Controller;
 
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.Nullable;
 
 import com.example.covidapp.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class CovidCountryAdapter extends RecyclerView.Adapter<CovidCountryAdapter.ViewHolder> {
-    ArrayList<CovidCountry> covidCountries;
+public class CovidCountryAdapter extends ArrayAdapter<CovidCountry> {
+    private  Context context;
+    private int  resource;
+    private List<CovidCountry> listCountry;
 
-    public CovidCountryAdapter(ArrayList<CovidCountry> covidCountries) {
-        this.covidCountries = covidCountries;
+    public CovidCountryAdapter(@NonNull Context context1, int resource, @NonNull List<CovidCountry> list) {
+        super(context1, resource, list);
+        this.context = context1;
+        this.resource = resource;
+        this.listCountry = list;
     }
+
     @NonNull
     @Override
-    public CovidCountryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_covid_country,parent,false);
-        return new ViewHolder(view);
-    }
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        LayoutInflater inflater= LayoutInflater.from(context);
+        View view= inflater.inflate(resource,null);
+        TextView textView_country= view.findViewById(R.id.textView_country);
+        TextView textView_totalCases= view.findViewById(R.id.textView_totalcases);
+        ImageView imageView=view.findViewById(R.id.imageView);
 
-    @Override
-    public void onBindViewHolder(@NonNull CovidCountryAdapter.ViewHolder holder, int position) {
-        CovidCountry covidCountry=covidCountries.get(position);
-        holder.tvTotalCases.setText(covidCountry.getTotalCases());
-        holder.tvTotalName.setText(covidCountry.getCovidCountry());
-    }
-
-    @Override
-    public int getItemCount() {
-        return covidCountries.size();
-    }
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tvTotalCases,tvTotalName;
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvTotalCases=itemView.findViewById(R.id.tvTotalCases);
-            tvTotalName=itemView.findViewById(R.id.tvCountryName);
-        }
+        CovidCountry covidCountry=listCountry.get(position);
+        textView_country.setText(covidCountry.getCovidCountry());
+        textView_totalCases.setText(covidCountry.getCases());
+        imageView.setImageDrawable(context.getResources().getDrawable(covidCountry.getImage()));
+        return  view;
     }
 }
