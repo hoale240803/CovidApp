@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Coronavirus COVID-19\n Global cases"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textSize="24dp"
+            android:layout_marginBottom="24dp">
+        </TextView>
+        <TextView
+            android:id="@+id/tvLabelTotalConfirmed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Total Confirmed"
+            android:textColor="#fff"
+            android:layout_marginBottom="24dp"
+            style="@style/LabelFontStyle">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvTotalConfirmed"
+            style="@style/LabelFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_bold"
+            android:onClick="onClick"
+            android:textColor="@color/colorTotalConfirmed"
+            android:textSize="26dp"
+            tools:text="143689"></TextView>
+        <TextView
+            android:id="@+id/tvLabelTotalDeaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Total Deaths"
+            android:textColor="#fff"
+            android:layout_marginBottom="24dp"
+            style="@style/LabelFontStyle">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvTotalDeaths"
+            style="@style/LabelFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_bold"
+            android:onClick="onClick"
+            android:textColor="@color/colorTotalDeaths"
+            android:textSize="26dp"
+            tools:text="123"></TextView>
+        <TextView
+            android:id="@+id/tvLabelTotalRecovered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Total Recovered"
+            android:textColor="#fff"
+            android:layout_marginBottom="24dp"
+            style="@style/LabelFontStyle">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvTotalRecovered"
+            style="@style/LabelFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_bold"
+            android:onClick="onClick"
+            android:textColor="@color/colorTotalRecovered"
+            android:textSize="26dp"
+            tools:text="123123"></TextView>
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress_circular_home"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/ic_loading"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
