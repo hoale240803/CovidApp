@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1A1029</color>
+    <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="colorTotalConfirmed">#FF7F50</color>
-    <color name="colorTotalDeaths">#FF0000</color>
-    <color name="colorTotalRecovered">#008000</color>
+
+    <color name="color_one">#fb7268</color>
+    <color name="color_white">#ededf2</color>
+    <color name="color_two">#E3E0E0</color>
+
+    <color name="color_cases">#FFA726</color>
+    <color name="color_recovered">#66BB6A</color>
+    <color name="color_deaths">#EF5350</color>
+    <color name="color_active">#29B6F6</color>
+
 </resources>

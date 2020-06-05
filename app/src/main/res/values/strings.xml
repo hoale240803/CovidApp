@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">CovidApp</string>
-    <string name="title_home">Home</string>
-    <string name="title_country">Country</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">Covid19App</string>
+
+
 </resources>
