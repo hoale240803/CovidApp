@@ -81,7 +81,6 @@ public class Covid_Country extends AppCompatActivity {
         });
     }
 
-    //chua hieu lam me gi
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==android.R.id.home){
