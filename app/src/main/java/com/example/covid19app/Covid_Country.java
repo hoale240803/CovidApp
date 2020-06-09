@@ -81,6 +81,7 @@ public class Covid_Country extends AppCompatActivity {
         });
     }
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==android.R.id.home){
@@ -108,11 +109,11 @@ public class Covid_Country extends AppCompatActivity {
                         String flag = object.getString("flag");
                         countryModel=new CountryModel(flag,countryName,cases,"",deaths,"",recovered,active);
                         countries.add(countryModel);
-                        countryAdapter=new CountryAdapter(Covid_Country.this,countries);
-                        listView.setAdapter(countryAdapter);
-                        loader.stop();
-                        loader.setVisibility(View.GONE);
                     }
+                    countryAdapter=new CountryAdapter(Covid_Country.this,countries);
+                    listView.setAdapter(countryAdapter);
+                    loader.stop();
+                    loader.setVisibility(View.GONE);
                 } catch (JSONException e) {
                     loader.stop();
                     loader.setVisibility(View.GONE);
@@ -129,5 +130,11 @@ public class Covid_Country extends AppCompatActivity {
         });
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(request);
+    }
+
+    @Override
+    protected void onResume() {
+        countries.clear();
+        super.onResume();
     }
 }
